@@ -7,10 +7,11 @@
 
 /* Body Styling */
 body {
-    font-family: 'Press Start 2P', cursive;
-    background-color: #0D2B6D; /* Dark Blue */
-    color: #FFFFFF; /* White */
+    font-family: 'Orbitron', sans-serif;
+    background-color: #0D0D0D; /* Dark Background */
+    color: #E0E0E0; /* Light Grey Text */
     line-height: 1.6;
+    background: linear-gradient(135deg, #0D0D0D 0%, #1A1A1A 100%);
 }
 
 /* Container */
@@ -23,77 +24,103 @@ body {
 
 /* Header Styling */
 header {
-    background-color: #3B8EFF; /* Blue */
+    background-color: #1F1F1F; /* Slightly Lighter Dark */
     padding: 40px 0;
     text-align: center;
     position: relative;
-    animation: fadeIn 2s ease-in-out;
+    animation: glitch 2s infinite;
+    background-image: url('images/cyber-background.png'); /* Optional: Add a cyberpunk background image */
+    background-size: cover;
+    background-position: center;
 }
 
 .profile-pic {
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    border: 5px solid #FF6AC1; /* Pink */
+    border: 3px solid #FF6AC1; /* Pink */
     object-fit: cover;
     margin-bottom: 20px;
+    box-shadow: 0 0 20px #FF6AC1;
 }
 
 header h1 {
     font-size: 2.5rem;
-    color: #FFFFFF;
+    color: #FF6AC1; /* Pink */
     margin-bottom: 10px;
-    text-shadow: 2px 2px #000000;
+    text-shadow: 0 0 10px #FF6AC1, 0 0 20px #FF6AC1;
 }
 
 header h2 {
     font-size: 1.5rem;
-    color: #C153FF; /* Purple */
+    color: #50FDFD; /* Bright Cyan */
     margin-bottom: 20px;
+    text-shadow: 0 0 10px #50FDFD, 0 0 20px #50FDFD;
 }
 
 nav ul {
     list-style: none;
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 30px;
 }
 
 nav ul li a {
-    color: #FFFFFF;
+    color: #E0E0E0;
     text-decoration: none;
-    padding: 10px 20px;
-    border: 2px solid #FFFFFF;
-    border-radius: 25px;
-    transition: background-color 0.3s, color 0.3s;
+    font-size: 1rem;
+    position: relative;
+    transition: color 0.3s;
+}
+
+nav ul li a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #FF6AC1;
+    transition: width 0.3s;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
 }
 
 nav ul li a:hover {
-    background-color: #FF6AC1; /* Pink */
-    color: #000000;
+    color: #FF6AC1;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
 }
 
 /* Resume Button Styling */
 .resume-button {
-    background-color: #74FF77; /* Green */
     color: #000000;
+    background-color: #A6FF00; /* Neon Green */
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+    font-weight: bold;
 }
 
 .resume-button:hover {
-    background-color: #A6FF00; /* Neon Green */
+    background-color: #50FDFD; /* Bright Cyan */
+    transform: scale(1.05);
     color: #FFFFFF;
 }
 
 /* Section Styling */
 .section {
     padding: 60px 0;
-    background-color: #0D2B6D; /* Dark Blue */
+    background-color: #1A1A1A; /* Dark Background */
     border-bottom: 2px solid #FF6AC1; /* Pink */
+    position: relative;
+    overflow: hidden;
 }
 
 .section:nth-child(even) {
-    background-color: #C4FCFF; /* Light Blue */
-    color: #000000;
+    background-color: #2E2E2E; /* Slightly Lighter Dark */
+    color: #E0E0E0;
 }
 
 .section h3 {
@@ -101,11 +128,16 @@ nav ul li a:hover {
     margin-bottom: 20px;
     text-align: center;
     color: #FF6AC1; /* Pink */
+    text-shadow: 0 0 10px #FF6AC1;
 }
 
-.section p, .section ul {
-    font-size: 1rem;
+.about-text {
+    max-width: 600px;
+    margin: 0 auto;
     text-align: center;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #CCCCCC;
 }
 
 .skills-list {
@@ -120,45 +152,77 @@ nav ul li a:hover {
     background-color: #50FDFD; /* Bright Cyan */
     color: #000000;
     padding: 10px 20px;
-    border-radius: 20px;
+    border-radius: 10px;
     transition: transform 0.3s, background-color 0.3s;
+    box-shadow: 0 0 10px #50FDFD;
 }
 
 .skills-list li:hover {
     transform: scale(1.1);
     background-color: #A6FF00; /* Neon Green */
+    box-shadow: 0 0 20px #A6FF00;
 }
 
 /* Social Links */
 .social-links {
     margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
 }
 
 .social-links a {
-    color: #FFFFFF;
+    color: #E0E0E0;
     text-decoration: none;
-    margin: 0 10px;
-    padding: 10px 15px;
+    padding: 10px 20px;
     background-color: #3B8EFF; /* Blue */
     border-radius: 20px;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 0 10px #3B8EFF;
 }
 
 .social-links a:hover {
     background-color: #FF6AC1; /* Pink */
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #FF6AC1;
 }
 
 /* Footer Styling */
 footer {
-    background-color: #3B8EFF; /* Blue */
+    background-color: #1F1F1F; /* Match Header */
     text-align: center;
     padding: 20px 0;
-    color: #FFFFFF;
+    color: #E0E0E0;
     position: relative;
-    animation: fadeIn 2s ease-in-out;
+    animation: glitch 2s infinite;
+    background-image: url('images/cyber-background.png'); /* Optional: Add a cyberpunk background image */
+    background-size: cover;
+    background-position: center;
+    text-shadow: 0 0 10px #FF6AC1;
 }
 
 /* Animations */
+@keyframes glitch {
+    0% {
+        transform: none;
+    }
+    20% {
+        transform: skew(-0.5deg);
+    }
+    40% {
+        transform: skew(0.5deg);
+    }
+    60% {
+        transform: skew(-0.5deg);
+    }
+    80% {
+        transform: skew(0.5deg);
+    }
+    100% {
+        transform: none;
+    }
+}
+
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
@@ -176,8 +240,8 @@ footer {
         align-items: center;
     }
 
-    .social-links a {
-        display: block;
-        margin: 10px 0;
+    .social-links {
+        flex-direction: column;
+        gap: 10px;
     }
 }
