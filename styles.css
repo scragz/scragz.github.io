@@ -11,7 +11,10 @@ body {
     background-color: #0D0D0D; /* Dark Background */
     color: #E0E0E0; /* Light Grey Text */
     line-height: 1.6;
-    background: linear-gradient(135deg, #0D0D0D 0%, #1A1A1A 100%);
+    background-image: url('images/cyber-background.png'); /* Optional: Add a textured cyberpunk background */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 /* Container */
@@ -24,14 +27,10 @@ body {
 
 /* Header Styling */
 header {
-    background-color: #1F1F1F; /* Slightly Lighter Dark */
-    padding: 40px 0;
+    padding: 60px 0;
     text-align: center;
     position: relative;
-    animation: glitch 2s infinite;
-    background-image: url('images/cyber-background.png'); /* Optional: Add a cyberpunk background image */
-    background-size: cover;
-    background-position: center;
+    overflow: hidden;
 }
 
 .profile-pic {
@@ -45,16 +44,17 @@ header {
 }
 
 header h1 {
-    font-size: 2.5rem;
+    font-size: 3rem;
     color: #FF6AC1; /* Pink */
     margin-bottom: 10px;
-    text-shadow: 0 0 10px #FF6AC1, 0 0 20px #FF6AC1;
+    position: relative;
+    display: inline-block;
 }
 
 header h2 {
     font-size: 1.5rem;
     color: #50FDFD; /* Bright Cyan */
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     text-shadow: 0 0 10px #50FDFD, 0 0 20px #50FDFD;
 }
 
@@ -62,13 +62,13 @@ nav ul {
     list-style: none;
     display: flex;
     justify-content: center;
-    gap: 30px;
+    gap: 40px;
 }
 
 nav ul li a {
     color: #E0E0E0;
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 1.1rem;
     position: relative;
     transition: color 0.3s;
 }
@@ -112,25 +112,136 @@ nav ul li a:hover::after {
 /* Section Styling */
 .section {
     padding: 60px 0;
-    background-color: #1A1A1A; /* Dark Background */
-    border-bottom: 2px solid #FF6AC1; /* Pink */
     position: relative;
     overflow: hidden;
 }
 
-.section:nth-child(even) {
-    background-color: #2E2E2E; /* Slightly Lighter Dark */
-    color: #E0E0E0;
+/* Uniform Background for All Sections */
+.section {
+    background: transparent;
 }
 
-.section h3 {
+/* Heading Styling with Glitch Effect */
+.glitch {
+    position: relative;
+    color: #FF6AC1;
     font-size: 2rem;
     margin-bottom: 20px;
     text-align: center;
-    color: #FF6AC1; /* Pink */
-    text-shadow: 0 0 10px #FF6AC1;
+    animation: glitch-animation 1s infinite;
 }
 
+.glitch::before,
+.glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+}
+
+.glitch::before {
+    left: 2px;
+    text-shadow: -2px 0 #FF6AC1;
+    animation: glitch-animation 2s infinite linear alternate-reverse;
+}
+
+.glitch::after {
+    left: -2px;
+    text-shadow: 2px 0 #50FDFD;
+    animation: glitch-animation 1.5s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-animation {
+    0% {
+        clip: rect(42px, 9999px, 44px, 0);
+        transform: skew(0.5deg);
+    }
+    5% {
+        clip: rect(12px, 9999px, 79px, 0);
+        transform: skew(0.5deg);
+    }
+    10% {
+        clip: rect(85px, 9999px, 90px, 0);
+        transform: skew(0.5deg);
+    }
+    15% {
+        clip: rect(15px, 9999px, 100px, 0);
+        transform: skew(0.5deg);
+    }
+    20% {
+        clip: rect(50px, 9999px, 60px, 0);
+        transform: skew(0.5deg);
+    }
+    25% {
+        clip: rect(20px, 9999px, 30px, 0);
+        transform: skew(0.5deg);
+    }
+    30% {
+        clip: rect(70px, 9999px, 80px, 0);
+        transform: skew(0.5deg);
+    }
+    35% {
+        clip: rect(10px, 9999px, 40px, 0);
+        transform: skew(0.5deg);
+    }
+    40% {
+        clip: rect(60px, 9999px, 70px, 0);
+        transform: skew(0.5deg);
+    }
+    45% {
+        clip: rect(30px, 9999px, 50px, 0);
+        transform: skew(0.5deg);
+    }
+    50% {
+        clip: rect(80px, 9999px, 90px, 0);
+        transform: skew(0.5deg);
+    }
+    55% {
+        clip: rect(25px, 9999px, 35px, 0);
+        transform: skew(0.5deg);
+    }
+    60% {
+        clip: rect(55px, 9999px, 65px, 0);
+        transform: skew(0.5deg);
+    }
+    65% {
+        clip: rect(5px, 9999px, 15px, 0);
+        transform: skew(0.5deg);
+    }
+    70% {
+        clip: rect(95px, 9999px, 105px, 0);
+        transform: skew(0.5deg);
+    }
+    75% {
+        clip: rect(35px, 9999px, 45px, 0);
+        transform: skew(0.5deg);
+    }
+    80% {
+        clip: rect(65px, 9999px, 75px, 0);
+        transform: skew(0.5deg);
+    }
+    85% {
+        clip: rect(0px, 9999px, 10px, 0);
+        transform: skew(0.5deg);
+    }
+    90% {
+        clip: rect(40px, 9999px, 50px, 0);
+        transform: skew(0.5deg);
+    }
+    95% {
+        clip: rect(90px, 9999px, 100px, 0);
+        transform: skew(0.5deg);
+    }
+    100% {
+        clip: rect(20px, 9999px, 30px, 0);
+        transform: skew(0.5deg);
+    }
+}
+
+/* About Text Styling */
 .about-text {
     max-width: 600px;
     margin: 0 auto;
@@ -138,19 +249,22 @@ nav ul li a:hover::after {
     font-size: 1.1rem;
     line-height: 1.8;
     color: #CCCCCC;
+    /* Additional Styling for Cyberpunk Aesthetic */
+    text-shadow: 0 0 5px #FF6AC1, 0 0 10px #FF6AC1;
 }
 
+/* Skills List Styling */
 .skills-list {
     list-style: none;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 15px;
+    gap: 20px;
 }
 
 .skills-list li {
-    background-color: #50FDFD; /* Bright Cyan */
-    color: #000000;
+    background-color: rgba(80, 253, 253, 0.2); /* Bright Cyan with transparency */
+    color: #50FDFD;
     padding: 10px 20px;
     border-radius: 10px;
     transition: transform 0.3s, background-color 0.3s;
@@ -159,11 +273,11 @@ nav ul li a:hover::after {
 
 .skills-list li:hover {
     transform: scale(1.1);
-    background-color: #A6FF00; /* Neon Green */
+    background-color: rgba(166, 255, 0, 0.2); /* Neon Green with transparency */
     box-shadow: 0 0 20px #A6FF00;
 }
 
-/* Social Links */
+/* Social Links Styling */
 .social-links {
     margin-top: 20px;
     display: flex;
@@ -175,64 +289,90 @@ nav ul li a:hover::after {
     color: #E0E0E0;
     text-decoration: none;
     padding: 10px 20px;
-    background-color: #3B8EFF; /* Blue */
+    background-color: rgba(59, 142, 255, 0.2); /* Blue with transparency */
     border-radius: 20px;
     transition: background-color 0.3s, transform 0.3s;
     box-shadow: 0 0 10px #3B8EFF;
 }
 
 .social-links a:hover {
-    background-color: #FF6AC1; /* Pink */
+    background-color: rgba(255, 106, 193, 0.2); /* Pink with transparency */
     transform: scale(1.05);
     box-shadow: 0 0 20px #FF6AC1;
 }
 
 /* Footer Styling */
 footer {
-    background-color: #1F1F1F; /* Match Header */
     text-align: center;
     padding: 20px 0;
     color: #E0E0E0;
     position: relative;
-    animation: glitch 2s infinite;
-    background-image: url('images/cyber-background.png'); /* Optional: Add a cyberpunk background image */
-    background-size: cover;
-    background-position: center;
+    /* Removed background-color and background-image to unify with body */
+}
+
+footer p {
     text-shadow: 0 0 10px #FF6AC1;
 }
 
-/* Animations */
-@keyframes glitch {
+/* Glitch Animations for Footer (Optional) */
+footer::before,
+footer::after {
+    content: "Jaycee Lydian";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+    pointer-events: none;
+}
+
+footer::before {
+    top: 0;
+    left: 2px;
+    text-shadow: -2px 0 #FF6AC1;
+    animation: glitch-animation-footer 3s infinite linear alternate-reverse;
+}
+
+footer::after {
+    top: 0;
+    left: -2px;
+    text-shadow: 2px 0 #50FDFD;
+    animation: glitch-animation-footer 2s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-animation-footer {
     0% {
-        transform: none;
+        clip: rect(10px, 9999px, 40px, 0);
+        transform: skew(0.5deg);
     }
     20% {
-        transform: skew(-0.5deg);
+        clip: rect(70px, 9999px, 90px, 0);
+        transform: skew(0.5deg);
     }
     40% {
+        clip: rect(20px, 9999px, 60px, 0);
         transform: skew(0.5deg);
     }
     60% {
-        transform: skew(-0.5deg);
+        clip: rect(50px, 9999px, 80px, 0);
+        transform: skew(0.5deg);
     }
     80% {
+        clip: rect(30px, 9999px, 70px, 0);
         transform: skew(0.5deg);
     }
     100% {
-        transform: none;
+        clip: rect(0px, 9999px, 50px, 0);
+        transform: skew(0.5deg);
     }
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
     nav ul {
         flex-direction: column;
-        gap: 10px;
+        gap: 15px;
     }
 
     .skills-list {
@@ -242,6 +382,14 @@ footer {
 
     .social-links {
         flex-direction: column;
-        gap: 10px;
+        gap: 15px;
+    }
+
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    .about-text {
+        font-size: 1rem;
     }
 }
