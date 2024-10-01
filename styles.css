@@ -1,0 +1,183 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Press Start 2P', cursive;
+    background-color: #0D2B6D; /* Dark Blue */
+    color: #FFFFFF; /* White */
+    line-height: 1.6;
+}
+
+/* Container */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px 0;
+}
+
+/* Header Styling */
+header {
+    background-color: #3B8EFF; /* Blue */
+    padding: 40px 0;
+    text-align: center;
+    position: relative;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid #FF6AC1; /* Pink */
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: #FFFFFF;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px #000000;
+}
+
+header h2 {
+    font-size: 1.5rem;
+    color: #C153FF; /* Purple */
+    margin-bottom: 20px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav ul li a {
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 2px solid #FFFFFF;
+    border-radius: 25px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #FF6AC1; /* Pink */
+    color: #000000;
+}
+
+/* Resume Button Styling */
+.resume-button {
+    background-color: #74FF77; /* Green */
+    color: #000000;
+}
+
+.resume-button:hover {
+    background-color: #A6FF00; /* Neon Green */
+    color: #FFFFFF;
+}
+
+/* Section Styling */
+.section {
+    padding: 60px 0;
+    background-color: #0D2B6D; /* Dark Blue */
+    border-bottom: 2px solid #FF6AC1; /* Pink */
+}
+
+.section:nth-child(even) {
+    background-color: #C4FCFF; /* Light Blue */
+    color: #000000;
+}
+
+.section h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #FF6AC1; /* Pink */
+}
+
+.section p, .section ul {
+    font-size: 1rem;
+    text-align: center;
+}
+
+.skills-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.skills-list li {
+    background-color: #50FDFD; /* Bright Cyan */
+    color: #000000;
+    padding: 10px 20px;
+    border-radius: 20px;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.skills-list li:hover {
+    transform: scale(1.1);
+    background-color: #A6FF00; /* Neon Green */
+}
+
+/* Social Links */
+.social-links {
+    margin-top: 20px;
+}
+
+.social-links a {
+    color: #FFFFFF;
+    text-decoration: none;
+    margin: 0 10px;
+    padding: 10px 15px;
+    background-color: #3B8EFF; /* Blue */
+    border-radius: 20px;
+    transition: background-color 0.3s;
+}
+
+.social-links a:hover {
+    background-color: #FF6AC1; /* Pink */
+}
+
+/* Footer Styling */
+footer {
+    background-color: #3B8EFF; /* Blue */
+    text-align: center;
+    padding: 20px 0;
+    color: #FFFFFF;
+    position: relative;
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .skills-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .social-links a {
+        display: block;
+        margin: 10px 0;
+    }
+}
